@@ -1,5 +1,6 @@
 Feature: Filling out the Ready to Transform Form
 
+	@regression
   Scenario Outline: Submitting the form with an invalid data atleast one data
     Given the user is on the home page of coursera
     When the user enters click on the For Enterprise

@@ -1,5 +1,6 @@
 Feature: Capturing Course Info
-
+	
+	@smoke @regression
   Scenario: Course Info
     Given the user is navigated to the coursera home page
     When user enters input field as "Web Development Courses" and clicks on search button

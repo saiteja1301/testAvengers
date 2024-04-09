@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -55,6 +56,32 @@ public class HomePageObject extends BasePage {
 	}
 	public void scrollIntoView(WebElement ele) {
 		js.executeScript("arguments[0].scrollIntoView(false);", ele);
+	}
+	
+	@FindBy(xpath="//button[@aria-label='Explore our catalog']")
+	WebElement explore;
+	@FindBy(xpath="//button[@data-e2e='megamenu-item~language-learning']")
+	WebElement langlearning;
+	@FindBy(xpath="//a[contains(text(),'All Language Courses')]")
+	WebElement alllangcourses;
+	@FindBy(xpath="//h2[contains(text(),'Learn Language Online')]")
+	WebElement heading;
+ 
+ 
+	public void exploreButton() {
+//		Actions act = new Actions(driver);
+//		act.moveToElement(explore);
+//		js.executeScript("arguments[0].click();",explore);
+		explore.click();
+	}
+	public void languageLearning() {
+		js.executeScript("arguments[0].click();",langlearning);
+	}
+	public void allLangCourses() {
+		js.executeScript("arguments[0].click();",alllangcourses);
+	}
+	public void allLangHeading() {
+		mywait.until(ExpectedConditions.visibilityOf(heading));
 	}
 
 }

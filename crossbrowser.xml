@@ -6,15 +6,21 @@
 	</listeners>
   <test thread-count="5" name="Test">
   	<parameter name="browser" value="chrome"></parameter>
+    <parameter name="execution_env" value="local"></parameter>
+    <parameter name="os" value="windows"></parameter>
     <classes>
       <class name="TestCases.TC_001_CapturingCourseInfo"/>
+      <class name="TestCases.TC_002_CapturingLanguges"/>
       <class name="TestCases.TC_003_ReadyToTransform" />
     </classes>
   </test>
   <test thread-count="5" name="Test1">
-  	<parameter name="browser" value="edge"></parameter>
+  	<parameter name="browser" value="chrome"></parameter>
+    <parameter name="execution_env" value="local"></parameter>
+    <parameter name="os" value="windows"></parameter>
     <classes>
       <class name="TestCases.TC_001_CapturingCourseInfo"/>
+      <class name="TestCases.TC_002_CapturingLanguges"/>
       <class name="TestCases.TC_003_ReadyToTransform" />
     </classes>
   </test> <!-- Test -->

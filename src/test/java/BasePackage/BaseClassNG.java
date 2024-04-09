@@ -41,7 +41,7 @@ public class BaseClassNG {
 	public static int rowNum;
 	public static Properties prop;
 	
-	@BeforeTest
+	@BeforeTest(groups= {"smoke","regression"})
 	@Parameters({"browser","execution_env","os"})
 	public static WebDriver driverSetup(String browser,String env,String os) throws IOException {
 		prop = new Properties();
@@ -86,7 +86,7 @@ public class BaseClassNG {
 		return driver;
 	}
 	
-	@AfterTest
+	@AfterTest(groups= {"smoke","regression"})
 	public static void driverClose() throws IOException {
 		wb.write(fo);
 		wb.close();

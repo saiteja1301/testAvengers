@@ -24,6 +24,7 @@ public class ReadyToTransform extends BaseClass {
 	@Given("the user is on the home page of coursera")
 	public void the_user_is_on_the_home_page_of_coursera() throws InterruptedException {
 		ro=new ReadytotransformObject(driver,mywait);
+		ro.scrollToTop();
 		ro.ForIndividualsClick();
 		log.info("user scrolling the page to the bottom");
 		ro.scrolldown();

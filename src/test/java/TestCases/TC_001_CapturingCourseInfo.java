@@ -17,7 +17,7 @@ public class TC_001_CapturingCourseInfo extends BaseClassNG {
 	HomePageObject hpo;
 	CoursePageObject cpo;
 	
-	@Test(priority=0)
+	@Test(priority=0,groups= {"smoke"})
 	public void courseSearch() {
 //		JavascriptExecutor js = (JavascriptExecutor)(driver);
 		hpo = new HomePageObject(driver,mywait);
@@ -40,7 +40,7 @@ public class TC_001_CapturingCourseInfo extends BaseClassNG {
 		}
 	}
 	
-	@Test(priority=1,dependsOnMethods = {"courseSearch"})
+	@Test(priority=1,groups= {"regression","smoke"})
 	public void capturingCourseData() throws IOException {
 		cpo = new CoursePageObject(driver, mywait);
 		String parent = driver.getWindowHandle();
@@ -88,6 +88,8 @@ public class TC_001_CapturingCourseInfo extends BaseClassNG {
 			}
 			rowNum+=1;
 			log.info("Captured the first two courses and printed to the console");
+			hpo.clickLevel();
+			hpo.clickLang();
 			Assert.assertTrue(true);
 		}
 		else {

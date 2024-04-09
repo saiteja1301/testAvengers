@@ -67,7 +67,6 @@ public class BaseClass {
 				driver = new EdgeDriver();
 			}
 		}
-//		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("appUrl"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

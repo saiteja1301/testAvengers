@@ -6,7 +6,8 @@ import io.cucumber.junit.CucumberOptions;
 
 	@RunWith(Cucumber.class)
 	@CucumberOptions(	
-				features= {".//FeatureFiles/CourseInfo.feature",".//FeatureFiles/Readytotransform.feature"},
+			
+				features= {".//FeatureFiles/CourseInfo.feature",".//FeatureFiles/LangLevels.feature",".//FeatureFiles/Readytotransform.feature"},
 				glue="StepDefinations",
 				plugin= {"pretty","html:Reports/myreports.html",
 						 "rerun:target/rerun.txt",
@@ -16,7 +17,8 @@ import io.cucumber.junit.CucumberOptions;
 				
 				dryRun=false,
 				monochrome=true, 
-				publish=true 
+				publish=true,
+				tags="@smoke or @regression"
 			)
 	
 	public class RunnerTest{

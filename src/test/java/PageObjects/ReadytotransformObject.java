@@ -34,7 +34,12 @@ public class ReadytotransformObject extends BasePage {
 	public WebElement mess;
 	@FindBy(xpath="//div[@class='mktoError']/preceding::label[1]")
 	public WebElement relLabel;
+	
 	//Actions
+	public void scrollToTop() {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,-document.body.scrollHeight)");
+	}
 	public void ForIndividualsClick() {
 		forIndividuals.click();
 	}

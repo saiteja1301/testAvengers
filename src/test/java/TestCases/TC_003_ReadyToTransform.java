@@ -16,9 +16,10 @@ public class TC_003_ReadyToTransform extends BaseClassNG{
 	RegisterForm Rf;
 	List<HashMap<String, String>> datamap;
 	
-	@Test(priority=1)
+	@Test(priority=1,groups= {"smoke"})
 	public void navigationToContactUsPage() throws InterruptedException{
 		ro=new ReadytotransformObject(driver,mywait);
+		ro.scrollToTop();
 		ro.ForIndividualsClick();
 		log.info("user scrolling the page to the bottom");
 		ro.scrolldown();
@@ -31,17 +32,12 @@ public class TC_003_ReadyToTransform extends BaseClassNG{
 		log.info("users clicks on the ready to transform");
 }
 
-	@Test(priority=2)
+	@Test(priority=2,groups= {"regression","smoke"})
 	
 	public void fillingTheForm() throws IOException, InterruptedException {
 		Rf=new RegisterForm(driver,mywait);
 		log.info("User navigated to ready to transform page");
 		log.info("user entered all the detailed");
-//		Rf.FirstName();
-//		Rf.LatName();
-//		Rf.email();
-//		Rf.PhoneNo();
-//		Rf.Submitbutton();
 		datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\readyToTransform.xlsx", "Sheet1");
 
         for(int row=1;row<=3;row++) {
@@ -57,15 +53,6 @@ public class TC_003_ReadyToTransform extends BaseClassNG{
     		Rf.PhoneNo(pass);
     		Rf.Institution(inst);
     		Rf.Submitbutton();
-//    		log.info("User captured the error message");
-//    		String ErrorMess=Rf.Error();
-//    		System.out.printf("ERROR MESSAGE:");
-//    		eu.setCellData(rowNum, 0, "Error Message", 0);
-//    		rowNum+=1;
-//    		eu.setCellData(rowNum, 0, ErrorMess, 1);
-//    		rowNum+=1;
-//    		System.out.println(ErrorMess);
-//    		Rf.screenshot1();
     		log.info("User captured the error message");
     		String message = ro.mess.getText();
     		message = ro.relLabel.getText()+": "+message;
@@ -78,14 +65,5 @@ public class TC_003_ReadyToTransform extends BaseClassNG{
     		Rf.screenshot1(ro.relLabel.getText());
         }
 		
-//		log.info("User captured the error message");
-//		String ErrorMess=Rf.Error();
-//		System.out.printf("ERROR MESSAGE:");
-//		eu.setCellData(rowNum, 0, "Error Message", 0);
-//		rowNum+=1;
-//		eu.setCellData(rowNum, 0, ErrorMess, 1);
-//		rowNum+=1;
-//		System.out.println(ErrorMess);
-//		Rf.screenshot1();
 	}
 }
