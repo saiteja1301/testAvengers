@@ -21,9 +21,9 @@ public class CourseInfo extends BaseClass{
 	
 	@Given("the user is navigated to the coursera home page")
 	public void the_user_is_navigated_to_the_coursera_home_page() {
-	    // WebElement logo = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@data-click-key='front_page.front_page_story.click.navigation_meta_nav_Individuals']")));
-	    // log.info("The User is navigated to the coursera Home Page");
-	    // Assert.assertTrue(logo.isDisplayed(),"The user hasn't navigated to the home page");
+	    WebElement logo = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@data-click-key='front_page.front_page_story.click.navigation_meta_nav_Individuals']")));
+	    log.info("The User is navigated to the coursera Home Page");
+	    Assert.assertTrue(logo.isDisplayed(),"The user hasn't navigated to the home page");
 	}
 
 	@When("user enters input field as {string} and clicks on search button")
